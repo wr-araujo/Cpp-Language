@@ -3,11 +3,11 @@ using std::vector;
 using std::string;
 using std::to_string;
 
-Account::Account(): balance(0)
+Account::Account(): balance(0), limit(50)
 {
 }
 
-vector<string> Account::Report()
+vector<string> Account::Report() const
 {
     vector<string> report;
     report.push_back("Balance is " + to_string(balance));
@@ -41,10 +41,12 @@ bool Account::Withdraw(int amount)
         return false;
     }
 
-    if (balance >= amount)
+    if ((balance + limit) >= amount)
     {
         balance -= amount;
         log.push_back(Transaction(amount, "Withdraw"));
+        balance -= 1;
+        log.push_back(Transaction(1, "Service Charge"));
         return true;
     }
     return false;

@@ -7,7 +7,7 @@ Transaction::Transaction(int amt, string kind): amount(amt), type(kind)
 {
 }
 
-string Transaction::Report()
+string Transaction::Report() const
 {
     string report;
     report += "  ";

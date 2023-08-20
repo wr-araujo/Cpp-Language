@@ -6,9 +6,9 @@ using std::cout;
 int main()
 {
     Account a1;
-    a1.Deposit(90);
-    /*
-    cout << "After depositing $90 " << "balance is " << a1.GetBalance() << '\n';
+    int const amount = 90;
+    a1.Deposit(amount);
+    cout << "After depositing $" << amount << " " << "balance is " << a1.GetBalance() << '\n';
 
     for (auto s : a1.Report())
     {
@@ -27,15 +27,4 @@ int main()
         cout << s << '\n';
     }
     return 0;
-
-
-    vector<string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
-    int i = 0;
-    for (const string& word : msg)
-    {
-        cout << word << " ";
-        ++i;
-    }
-    cout << endl;
-    */
 }

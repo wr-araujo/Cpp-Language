@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 
 class Transaction
@@ -7,5 +9,6 @@ private:
     std::string type; // a better way exists
 public:
     Transaction(int amt, std::string kind);
-    std::string Report();
+    std::string Report() const;
+    void DoubleAmount() {amount *= 2;}
 };
